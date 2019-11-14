@@ -71,13 +71,12 @@ const VideoList = ()=>{
 export default VideoList;
 
 const List = styled.div`
-background: oldlace;
-height: 100vh;
-width:100%;
-border-radius: 0.4rem;
-overflow-y: scroll;
-box-shadow: 0 0.2rem 0.8rem DimGrey;
-    @media (min-width: 1072px) {
-        // overflow-y: scroll;
-    }
+    background: oldlace;
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.4rem;
+    overflow-y: scroll;
+    box-shadow: 0 0.2rem 0.8rem dimgrey;
+    min-height: 320px;
 `
