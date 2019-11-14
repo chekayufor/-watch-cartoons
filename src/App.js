@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import {SearchBar, VideoList, VideoDetail} from './components'
+import GlobalStyles from '../src/styles.lib/global.styles'
+import styled from "styled-components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+
+    return(
+        <MainContainer> 
+            <SearchBar/>
+            <ContentContainer>
+                <VideoDetail/>
+                <VideoList/>
+            </ContentContainer>
+            <GlobalStyles />
+        </MainContainer>
+    )
 }
-
 export default App;
+
+const MainContainer = styled.div`
+    display: grid;
+    width: 100%;
+    height: 100%;
+    // min-height: 100vh;
+    grid-template-rows: 80px auto;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    grid-gap: 1%;
+    padding: 2%;
+    background-color: gray; 
+
+
+ `
+const ContentContainer = styled.div`
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% auto;
+    grid-gap: 1%;
+    @media (min-width: 1072px) {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 100%;
+        height:100vh;
+    }
+ `
