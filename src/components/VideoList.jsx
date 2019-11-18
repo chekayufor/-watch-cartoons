@@ -3,6 +3,8 @@ import VideoItem from './VideoItem';
 import styled from "styled-components";
 import youtube from '../api/youtube';
 import { Context } from "./ContextProvider";
+import {Key} from '../api/Key';
+
 
 
 
@@ -27,11 +29,18 @@ const VideoList = ()=>{
 
     const fetchMoreListItems = async (searchTerm) => {
         const response = await youtube.get('search', {  
-            params: {
+           params: {
                 part: 'snippet',
-                maxResults: 10,
-                key: 'AIzaSyCUK46ZJXTBT5LuvSyv9a8l4X32WkZIa2M',
+                maxResults: 50,
+                key: Key,
                 q:searchTerm,
+                order:'viewCount',
+                pageToken:'CAoQAA',
+                pageInfo: {
+                    totalResults: 100,
+                    resultsPerPage: 15
+                  },
+                type:'video',
             }
         }); 
         console.log(response.data.items);

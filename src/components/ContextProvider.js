@@ -19,9 +19,16 @@ const ContextProvider = ({ children }) => {
         const response = await youtube.get('search', {  
             params: {
                 part: 'snippet',
-                maxResults: 25,
+                maxResults: 15,
                 key: Key,
                 q:searchTerm,
+                order:'viewCount',
+                pageToken:'CAoQAA',
+                pageInfo: {
+                    totalResults: 100,
+                    resultsPerPage: 15
+                  },
+                type:'video',
             }
         });
         
