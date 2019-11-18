@@ -1,10 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {SearchBar, VideoList, VideoDetail} from './components'
 import GlobalStyles from '../src/styles.lib/global.styles'
 import styled from "styled-components";
+import { Context } from "../src/components/ContextProvider";
+
 
 
 const App = () => {
+    const { selectedVideo } = useContext(Context);
+
+    if(!selectedVideo) return (<> Loading...</>)
 
     return(
         <MainContainer> 

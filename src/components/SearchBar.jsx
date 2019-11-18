@@ -17,7 +17,7 @@ const SearchBar = () => {
     return(
         <Paper elevation={6} style={{padding:'25px'}}>
             <form  onSubmit={onFormSubmit}>
-                <TextField fullWidth label='Search...' onChange={handleChange}/>
+                <TextField style={{fontSize:'50px'}} fullWidth label='Search...' onChange={handleChange}/>
             </form>
         </Paper>
     )

@@ -7,9 +7,6 @@ import { Context } from "./ContextProvider";
 const VideoDetail = ()=>{
     const { selectedVideo } = useContext(Context);
 
-    if(!selectedVideo) return <div>Loading...</div>
-    
-
     const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`
     return(
         <Container>

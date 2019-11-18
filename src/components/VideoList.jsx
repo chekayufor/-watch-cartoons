@@ -67,7 +67,7 @@ const VideoList = ()=>{
 
 
 
-    const listOfVideos = videos.slice(1,videos.length).map((video, id) => <VideoItem  onSelectVideo={onVideoSelect} key={id}  video ={video}/>)
+    const listOfVideos = videos.map((video, id) => <VideoItem  onSelectVideo={onVideoSelect} key={id}  video ={video}/>)
     return (
         
         <List  ref = {boxRef} container spacing={10}>

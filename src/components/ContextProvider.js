@@ -19,13 +19,13 @@ const ContextProvider = ({ children }) => {
         const response = await youtube.get('search', {  
             params: {
                 part: 'snippet',
-                maxResults: 15,
+                maxResults: 50,
                 key: Key,
                 q:searchTerm,
                 order:'viewCount',
                 pageToken:'CAoQAA',
                 pageInfo: {
-                    totalResults: 100,
+                    totalResults: 50,
                     resultsPerPage: 15
                   },
                 type:'video',
@@ -35,7 +35,7 @@ const ContextProvider = ({ children }) => {
         console.log(response.data.items);
 
         setVideos(response.data.items);
-        setSelectedVideo(response.data.items[1]);
+        setSelectedVideo(response.data.items[0]);
     }
 
     const onVideoSelect = (video) => {
@@ -60,3 +60,4 @@ const ContextProvider = ({ children }) => {
 };
 
 export { ContextProvider, Context };
+
